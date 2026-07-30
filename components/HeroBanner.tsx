@@ -1,11 +1,13 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { CALENDLY_URL, t } from "@/lib/content";
 import type { Lang } from "@/lib/locale";
 
-const SLIDE_COUNT = 4;
+const SLIDES = ["/banner1.png", "/banner2.png", "/banner3.png", "/banner4.jpg"];
+const SLIDE_COUNT = SLIDES.length;
 const AUTOPLAY_MS = 5000;
 
 export default function HeroBanner({ lang }: { lang: Lang }) {
@@ -20,23 +22,13 @@ export default function HeroBanner({ lang }: { lang: Lang }) {
   return (
     <section className="relative overflow-hidden bg-hero py-24 pb-16 text-white sm:py-28">
       <div className="absolute inset-0">
-        {Array.from({ length: SLIDE_COUNT }).map((_, i) => (
+        {SLIDES.map((src, i) => (
           <div
-            key={i}
+            key={src}
             className="absolute inset-0 transition-opacity duration-[1200ms] ease-in-out"
             style={{ opacity: i === slide ? 1 : 0 }}
           >
-            <div
-              className="flex h-full w-full items-center justify-center font-mono text-xs text-white/40"
-              style={{
-                background:
-                  i % 2 === 0
-                    ? "repeating-linear-gradient(45deg, oklch(28% 0.05 265), oklch(28% 0.05 265) 14px, oklch(24% 0.04 265) 14px, oklch(24% 0.04 265) 28px)"
-                    : "repeating-linear-gradient(45deg, oklch(26% 0.05 220), oklch(26% 0.05 220) 14px, oklch(22% 0.04 220) 14px, oklch(22% 0.04 220) 28px)",
-              }}
-            >
-              banner{i + 1}.png
-            </div>
+            <Image src={src} alt="" fill priority={i === 0} sizes="100vw" className="object-cover" />
           </div>
         ))}
         <div
@@ -56,18 +48,24 @@ export default function HeroBanner({ lang }: { lang: Lang }) {
         <p className="mt-6 max-w-[560px] text-lg leading-relaxed text-white/85">{copy.hero.copy}</p>
 
         <div className="mt-9 flex flex-wrap gap-3.5">
-          <Link href={`/${lang}/quote`} className="rounded-control bg-lime px-6 py-3.5 text-[15px] font-semibold text-hero-deep">
+          <Link
+            href={`/${lang}/quote`}
+            className="rounded-control bg-lime px-6 py-3.5 text-[15px] font-semibold text-hero-deep transition-opacity duration-200 hover:opacity-90"
+          >
             {copy.hero.ctaQuote}
           </Link>
           <a
             href={CALENDLY_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-control border border-hero-border px-6 py-3.5 text-[15px] font-semibold text-white"
+            className="rounded-control border border-hero-border px-6 py-3.5 text-[15px] font-semibold text-white transition-colors duration-200 hover:bg-white/10"
           >
             {copy.ctaBand.call}
           </a>
-          <Link href={`/${lang}/solutions`} className="rounded-control px-6 py-3.5 text-[15px] font-semibold text-white/85">
+          <Link
+            href={`/${lang}/solutions`}
+            className="rounded-control px-6 py-3.5 text-[15px] font-semibold text-white/85 transition-colors duration-200 hover:text-white"
+          >
             {copy.hero.ctaSolutions}
           </Link>
         </div>

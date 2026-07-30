@@ -24,7 +24,8 @@ export default function QuoteForm({ lang }: { lang: Lang }) {
     window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
   }
 
-  const inputClass = "rounded-control border border-input-border px-3.5 py-3 text-sm";
+  const inputClass =
+    "rounded-control border border-input-border px-3.5 py-3 text-sm transition-colors duration-200 focus:border-primary focus:outline-none";
   const labelClass = "text-[13px] font-semibold";
 
   return (
@@ -109,7 +110,10 @@ export default function QuoteForm({ lang }: { lang: Lang }) {
           />
         </div>
       </div>
-      <button type="submit" className="mt-5 rounded-control bg-primary px-6 py-3.5 text-sm font-bold text-white">
+      <button
+        type="submit"
+        className="mt-5 rounded-control bg-primary px-6 py-3.5 text-sm font-bold text-white transition-opacity duration-200 hover:opacity-90"
+      >
         {copy.submit}
       </button>
     </form>

@@ -19,8 +19,10 @@ export default function ProjectsFilter({ lang }: { lang: Lang }) {
               key={f.id}
               type="button"
               onClick={() => setActive(f.id)}
-              className={`rounded-full border px-4.5 py-2.5 text-[13px] font-semibold ${
-                isActive ? "border-transparent bg-primary text-white" : "border-input-border bg-white text-ink-soft"
+              className={`rounded-full border px-4.5 py-2.5 text-[13px] font-semibold transition-colors duration-200 ${
+                isActive
+                  ? "border-transparent bg-primary text-white"
+                  : "border-input-border bg-white text-ink-soft hover:border-primary hover:text-primary"
               }`}
             >
               {lang === "ar" ? f.ar : f.en}
@@ -33,7 +35,10 @@ export default function ProjectsFilter({ lang }: { lang: Lang }) {
         {filtered.map((project) => {
           const category = projectCategories.find((c) => c.id === project.category);
           return (
-            <div key={project.id} className="overflow-hidden rounded-card-lg border border-hairline bg-white">
+            <div
+              key={project.id}
+              className="overflow-hidden rounded-card-lg border border-hairline bg-white transition-all duration-200 hover:-translate-y-1 hover:shadow-lg"
+            >
               <div className="flex h-[150px] items-center justify-center bg-[repeating-linear-gradient(45deg,oklch(93%_0.02_265),oklch(93%_0.02_265)_10px,oklch(96%_0.01_265)_10px,oklch(96%_0.01_265)_20px)] font-mono text-[11px] text-primary/70">
                 project photo
               </div>

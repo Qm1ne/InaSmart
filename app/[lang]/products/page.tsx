@@ -23,7 +23,7 @@ export default function ProductsPage({ params }: { params: { lang: string } }) {
           {productCategories.map((cat) => (
             <div
               key={cat.id}
-              className="grid grid-cols-1 gap-8 rounded-card-lg border border-hairline bg-white p-7 md:grid-cols-[280px_1fr]"
+              className="grid grid-cols-1 gap-8 rounded-card-lg border border-hairline bg-white p-7 transition-shadow duration-200 hover:shadow-lg md:grid-cols-[280px_1fr]"
             >
               <div className="flex h-[180px] items-center justify-center rounded-xl bg-[repeating-linear-gradient(45deg,oklch(93%_0.03_195),oklch(93%_0.03_195)_10px,oklch(96%_0.02_195)_10px,oklch(96%_0.02_195)_20px)] font-mono text-[11px] text-accent/80">
                 category photo

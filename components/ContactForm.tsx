@@ -28,7 +28,7 @@ export default function ContactForm({ lang }: { lang: Lang }) {
           required
           value={name}
           onChange={(e) => setName(e.target.value)}
-          className="rounded-control border border-input-border px-3.5 py-3 text-sm"
+          className="rounded-control border border-input-border px-3.5 py-3 text-sm transition-colors duration-200 focus:border-primary focus:outline-none"
         />
       </div>
       <div className="flex flex-col gap-1.5">
@@ -41,7 +41,7 @@ export default function ContactForm({ lang }: { lang: Lang }) {
           required
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="rounded-control border border-input-border px-3.5 py-3 text-sm"
+          className="rounded-control border border-input-border px-3.5 py-3 text-sm transition-colors duration-200 focus:border-primary focus:outline-none"
         />
       </div>
       <div className="flex flex-col gap-1.5">
@@ -54,12 +54,12 @@ export default function ContactForm({ lang }: { lang: Lang }) {
           required
           value={message}
           onChange={(e) => setMessage(e.target.value)}
-          className="rounded-control border border-input-border px-3.5 py-3 text-sm font-body"
+          className="rounded-control border border-input-border px-3.5 py-3 text-sm font-body transition-colors duration-200 focus:border-primary focus:outline-none"
         />
       </div>
       <button
         type="submit"
-        className="mt-2 self-start rounded-control bg-primary px-5.5 py-3.5 text-sm font-bold text-white"
+        className="mt-2 self-start rounded-control bg-primary px-5.5 py-3.5 text-sm font-bold text-white transition-opacity duration-200 hover:opacity-90"
       >
         {copy.send}
       </button>

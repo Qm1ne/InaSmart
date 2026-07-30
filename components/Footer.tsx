@@ -18,7 +18,11 @@ export default function Footer({ lang }: { lang: Lang }) {
           <p className="mb-3 text-xs font-bold uppercase tracking-[0.16em] text-primary">{copy.footer.explore}</p>
           <div className="flex flex-col gap-2">
             {footerNav.map((item) => (
-              <Link key={item.key} href={`/${lang}${item.href ? `/${item.href}` : ""}`} className="text-sm text-ink-soft">
+              <Link
+                key={item.key}
+                href={`/${lang}${item.href ? `/${item.href}` : ""}`}
+                className="w-fit text-sm text-ink-soft transition-colors duration-200 hover:text-primary"
+              >
                 {lang === "ar" ? item.ar : item.en}
               </Link>
             ))}
@@ -29,10 +33,15 @@ export default function Footer({ lang }: { lang: Lang }) {
           <div className="flex flex-col gap-2 text-sm text-ink-soft">
             <span>{CONTACT_EMAIL}</span>
             <span>{CONTACT_PHONE}</span>
-            <WhatsAppLink className="w-fit">
+            <WhatsAppLink className="w-fit transition-colors duration-200 hover:text-primary">
               {copy.whatsappNav}: {CONTACT_WHATSAPP_DISPLAY}
             </WhatsAppLink>
-            <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" className="w-fit">
+            <a
+              href={CALENDLY_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-fit transition-colors duration-200 hover:text-primary"
+            >
               {copy.ctaBand.call}
             </a>
             <span>Doha, Qatar</span>

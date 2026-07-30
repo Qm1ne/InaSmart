@@ -34,7 +34,7 @@ export default function Header({ lang }: { lang: Lang }) {
               <Link
                 key={item.key}
                 href={`/${lang}${item.href ? `/${item.href}` : ""}`}
-                className={`text-sm font-semibold ${isActive ? "text-primary" : "text-ink-soft"}`}
+                className={`text-sm font-semibold transition-colors duration-200 hover:text-primary ${isActive ? "text-primary" : "text-ink-soft"}`}
               >
                 {lang === "ar" ? item.ar : item.en}
               </Link>
@@ -45,16 +45,16 @@ export default function Header({ lang }: { lang: Lang }) {
         <div className="flex items-center gap-2.5">
           <Link
             href={langToggleHref}
-            className="rounded-full border border-input-border bg-white px-3.5 py-2 text-xs font-semibold text-ink"
+            className="rounded-full border border-input-border bg-white px-3.5 py-2 text-xs font-semibold text-ink transition-colors duration-200 hover:border-primary hover:text-primary"
           >
             {lang === "ar" ? "EN" : "AR"}
           </Link>
-          <WhatsAppLink className="hidden items-center gap-1.5 rounded-control border border-whatsapp-border bg-whatsapp-tint px-4 py-2.5 text-sm font-semibold text-whatsapp sm:inline-flex">
+          <WhatsAppLink className="hidden items-center gap-1.5 rounded-control border border-whatsapp-border bg-whatsapp-tint px-4 py-2.5 text-sm font-semibold text-whatsapp transition-opacity duration-200 hover:opacity-80 sm:inline-flex">
             {copy.whatsappNav}
           </WhatsAppLink>
           <Link
             href={`/${lang}/quote`}
-            className="hidden rounded-control bg-primary px-5 py-[11px] text-sm font-semibold text-white sm:inline-flex"
+            className="hidden rounded-control bg-primary px-5 py-[11px] text-sm font-semibold text-white transition-opacity duration-200 hover:opacity-90 sm:inline-flex"
           >
             {copy.quoteCta}
           </Link>
@@ -63,7 +63,7 @@ export default function Header({ lang }: { lang: Lang }) {
             onClick={() => setMenuOpen((open) => !open)}
             aria-label="Toggle menu"
             aria-expanded={menuOpen}
-            className="flex h-10 w-10 items-center justify-center rounded-control border border-hairline md:hidden"
+            className="flex h-10 w-10 items-center justify-center rounded-control border border-hairline transition-colors duration-200 hover:border-primary md:hidden"
           >
             <span className="sr-only">Menu</span>
             <div className="flex flex-col gap-1">
@@ -84,7 +84,7 @@ export default function Header({ lang }: { lang: Lang }) {
                 key={item.key}
                 href={`/${lang}${item.href ? `/${item.href}` : ""}`}
                 onClick={() => setMenuOpen(false)}
-                className={`py-2 text-sm font-semibold ${isActive ? "text-primary" : "text-ink-soft"}`}
+                className={`py-2 text-sm font-semibold transition-colors duration-200 hover:text-primary ${isActive ? "text-primary" : "text-ink-soft"}`}
               >
                 {lang === "ar" ? item.ar : item.en}
               </Link>
@@ -93,11 +93,11 @@ export default function Header({ lang }: { lang: Lang }) {
           <Link
             href={`/${lang}/quote`}
             onClick={() => setMenuOpen(false)}
-            className="mt-2 inline-flex w-fit rounded-control bg-primary px-5 py-[11px] text-sm font-semibold text-white"
+            className="mt-2 inline-flex w-fit rounded-control bg-primary px-5 py-[11px] text-sm font-semibold text-white transition-opacity duration-200 hover:opacity-90"
           >
             {copy.quoteCta}
           </Link>
-          <WhatsAppLink className="mt-2 inline-flex w-fit items-center gap-1.5 rounded-control border border-whatsapp-border bg-whatsapp-tint px-4 py-2.5 text-sm font-semibold text-whatsapp">
+          <WhatsAppLink className="mt-2 inline-flex w-fit items-center gap-1.5 rounded-control border border-whatsapp-border bg-whatsapp-tint px-4 py-2.5 text-sm font-semibold text-whatsapp transition-opacity duration-200 hover:opacity-80">
             {copy.whatsappNav}
           </WhatsAppLink>
         </nav>

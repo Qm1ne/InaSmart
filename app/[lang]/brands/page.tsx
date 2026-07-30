@@ -21,7 +21,10 @@ export default function BrandsPage({ params }: { params: { lang: string } }) {
       <section className="pb-22 pt-6">
         <div className="mx-auto grid max-w-content grid-cols-1 gap-5 px-8 sm:grid-cols-2 lg:grid-cols-3">
           {brands.map((b, i) => (
-            <div key={i} className="flex items-center justify-center rounded-card border border-hairline bg-white p-9">
+            <div
+              key={i}
+              className="flex items-center justify-center rounded-card border border-hairline bg-white p-9 transition-all duration-200 hover:-translate-y-1 hover:shadow-lg"
+            >
               <span className="font-mono text-xs text-ink-muted">{lang === "ar" ? b.ar : b.en}</span>
             </div>
           ))}

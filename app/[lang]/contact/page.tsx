@@ -31,7 +31,9 @@ export default function ContactPage({ params }: { params: { lang: string } }) {
             <div>
               <strong>{copy.whatsapp}</strong>
               <br />
-              <WhatsAppLink className="font-semibold text-primary">{CONTACT_WHATSAPP_DISPLAY}</WhatsAppLink>
+              <WhatsAppLink className="font-semibold text-primary transition-opacity duration-200 hover:opacity-70">
+                {CONTACT_WHATSAPP_DISPLAY}
+              </WhatsAppLink>
             </div>
             <div>
               <strong>{copy.address}</strong>

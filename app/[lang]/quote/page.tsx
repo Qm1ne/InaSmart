@@ -22,11 +22,11 @@ export default function QuotePage({ params }: { params: { lang: string } }) {
             href={CALENDLY_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-control border border-primary px-4.5 py-2.5 text-[13px] font-bold text-primary"
+            className="rounded-control border border-primary px-4.5 py-2.5 text-[13px] font-bold text-primary transition-colors duration-200 hover:bg-primary-tint"
           >
             {copy.orCall}
           </a>
-          <WhatsAppLink className="rounded-control border border-whatsapp-border bg-whatsapp-tint px-4.5 py-2.5 text-[13px] font-bold text-whatsapp">
+          <WhatsAppLink className="rounded-control border border-whatsapp-border bg-whatsapp-tint px-4.5 py-2.5 text-[13px] font-bold text-whatsapp transition-opacity duration-200 hover:opacity-80">
             {copy.orWhatsapp}
           </WhatsAppLink>
         </div>

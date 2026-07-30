@@ -38,13 +38,19 @@ export default function HomePage({ params }: { params: { lang: string } }) {
               <p className="mb-2.5 text-xs font-bold uppercase tracking-[0.16em] text-primary">{copy.solutionsSection.kicker}</p>
               <h2 className="font-display text-[32px] font-bold">{copy.solutionsSection.title}</h2>
             </div>
-            <Link href={`/${lang}/solutions`} className="text-sm font-semibold text-primary">
+            <Link
+              href={`/${lang}/solutions`}
+              className="text-sm font-semibold text-primary transition-opacity duration-200 hover:opacity-70"
+            >
               {copy.solutionsSection.link}
             </Link>
           </div>
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {solutions.slice(0, 4).map((s) => (
-              <div key={s.id} className="rounded-card border border-hairline bg-white p-5.5">
+              <div
+                key={s.id}
+                className="rounded-card border border-hairline bg-white p-5.5 transition-all duration-200 hover:-translate-y-1 hover:shadow-lg"
+              >
                 <div className="flex h-8.5 w-8.5 items-center justify-center rounded-[9px] bg-primary-tint font-display text-[13px] font-bold text-primary">
                   {s.mono}
                 </div>
@@ -65,13 +71,19 @@ export default function HomePage({ params }: { params: { lang: string } }) {
               <p className="mb-2.5 text-xs font-bold uppercase tracking-[0.16em] text-accent">{copy.productsSection.kicker}</p>
               <h2 className="font-display text-[32px] font-bold">{copy.productsSection.title}</h2>
             </div>
-            <Link href={`/${lang}/products`} className="text-sm font-semibold text-accent">
+            <Link
+              href={`/${lang}/products`}
+              className="text-sm font-semibold text-accent transition-opacity duration-200 hover:opacity-70"
+            >
               {copy.productsSection.link}
             </Link>
           </div>
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {productCategories.map((cat) => (
-              <div key={cat.id} className="overflow-hidden rounded-2xl border border-hairline bg-white">
+              <div
+                key={cat.id}
+                className="overflow-hidden rounded-2xl border border-hairline bg-white transition-all duration-200 hover:-translate-y-1 hover:shadow-lg"
+              >
                 <div className="flex h-[120px] items-center justify-center bg-[repeating-linear-gradient(45deg,oklch(93%_0.03_195),oklch(93%_0.03_195)_10px,oklch(96%_0.02_195)_10px,oklch(96%_0.02_195)_20px)] font-mono text-[11px] text-accent/80">
                   product photo
                 </div>
@@ -100,7 +112,7 @@ export default function HomePage({ params }: { params: { lang: string } }) {
                 <Link
                   key={p.id}
                   href={`/${lang}/projects`}
-                  className="block overflow-hidden rounded-2xl border border-hairline bg-white"
+                  className="block overflow-hidden rounded-2xl border border-hairline bg-white transition-all duration-200 hover:-translate-y-1 hover:shadow-lg"
                 >
                   <div className="flex h-[140px] items-center justify-center bg-[repeating-linear-gradient(45deg,oklch(93%_0.02_265),oklch(93%_0.02_265)_10px,oklch(96%_0.01_265)_10px,oklch(96%_0.01_265)_20px)] font-mono text-[11px] text-primary/70">
                     project photo
@@ -124,14 +136,17 @@ export default function HomePage({ params }: { params: { lang: string } }) {
             <p className="mt-3 max-w-[520px] text-white/90">{copy.ctaBand.copy}</p>
           </div>
           <div className="flex flex-wrap gap-3">
-            <Link href={`/${lang}/quote`} className="rounded-control bg-white px-6 py-3.5 text-[15px] font-bold text-primary">
+            <Link
+              href={`/${lang}/quote`}
+              className="rounded-control bg-white px-6 py-3.5 text-[15px] font-bold text-primary transition-opacity duration-200 hover:opacity-90"
+            >
               {copy.ctaBand.quote}
             </Link>
             <a
               href={CALENDLY_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-control border border-primary-border px-6 py-3.5 text-[15px] font-bold text-white"
+              className="rounded-control border border-primary-border px-6 py-3.5 text-[15px] font-bold text-white transition-colors duration-200 hover:bg-white/10"
             >
               {copy.ctaBand.call}
             </a>
