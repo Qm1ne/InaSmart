@@ -84,7 +84,7 @@ export default function HomePage({ params }: { params: { lang: string } }) {
                 key={cat.id}
                 className="overflow-hidden rounded-2xl border border-hairline bg-white transition-all duration-200 hover:-translate-y-1 hover:shadow-lg"
               >
-                <div className="flex h-[120px] items-center justify-center bg-[repeating-linear-gradient(45deg,oklch(93%_0.03_195),oklch(93%_0.03_195)_10px,oklch(96%_0.02_195)_10px,oklch(96%_0.02_195)_20px)] font-mono text-[11px] text-accent/80">
+                <div className="flex h-[120px] items-center justify-center bg-[repeating-linear-gradient(45deg,#FBE4CE,#FBE4CE_10px,#FDF0DE_10px,#FDF0DE_20px)] font-mono text-[11px] text-[#8A4415]">
                   product photo
                 </div>
                 <div className="p-5.5">
@@ -114,7 +114,7 @@ export default function HomePage({ params }: { params: { lang: string } }) {
                   href={`/${lang}/projects`}
                   className="block overflow-hidden rounded-2xl border border-hairline bg-white transition-all duration-200 hover:-translate-y-1 hover:shadow-lg"
                 >
-                  <div className="flex h-[140px] items-center justify-center bg-[repeating-linear-gradient(45deg,oklch(93%_0.02_265),oklch(93%_0.02_265)_10px,oklch(96%_0.01_265)_10px,oklch(96%_0.01_265)_20px)] font-mono text-[11px] text-primary/70">
+                  <div className="flex h-[140px] items-center justify-center bg-[repeating-linear-gradient(45deg,#F7DCE7,#F7DCE7_10px,#FBEEF3_10px,#FBEEF3_20px)] font-mono text-[11px] text-[#8A1F49]">
                     project photo
                   </div>
                   <div className="p-5">
@@ -133,7 +133,7 @@ export default function HomePage({ params }: { params: { lang: string } }) {
         <div className="mx-auto flex max-w-content flex-wrap items-center justify-between gap-6 px-8">
           <div>
             <h2 className="font-display text-[30px] font-bold">{copy.ctaBand.title}</h2>
-            <p className="mt-3 max-w-[520px] text-white/90">{copy.ctaBand.copy}</p>
+            <p className="mt-3 max-w-[520px] text-[#F2C9DA]">{copy.ctaBand.copy}</p>
           </div>
           <div className="flex flex-wrap gap-3">
             <Link

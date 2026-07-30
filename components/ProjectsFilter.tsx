@@ -39,7 +39,7 @@ export default function ProjectsFilter({ lang }: { lang: Lang }) {
               key={project.id}
               className="overflow-hidden rounded-card-lg border border-hairline bg-white transition-all duration-200 hover:-translate-y-1 hover:shadow-lg"
             >
-              <div className="flex h-[150px] items-center justify-center bg-[repeating-linear-gradient(45deg,oklch(93%_0.02_265),oklch(93%_0.02_265)_10px,oklch(96%_0.01_265)_10px,oklch(96%_0.01_265)_20px)] font-mono text-[11px] text-primary/70">
+              <div className="flex h-[150px] items-center justify-center bg-[repeating-linear-gradient(45deg,#F7DCE7,#F7DCE7_10px,#FBEEF3_10px,#FBEEF3_20px)] font-mono text-[11px] text-[#8A1F49]">
                 project photo
               </div>
               <div className="p-5">

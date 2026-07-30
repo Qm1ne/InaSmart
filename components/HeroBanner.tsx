@@ -35,13 +35,13 @@ export default function HeroBanner({ lang }: { lang: Lang }) {
           className="pointer-events-none absolute inset-0"
           style={{
             background:
-              "linear-gradient(100deg, oklch(15% 0.03 265 / 0.92) 0%, oklch(18% 0.03 265 / 0.75) 45%, oklch(18% 0.03 265 / 0.4) 100%)",
+              "linear-gradient(100deg, rgba(26,12,19,0.92) 0%, rgba(36,16,25,0.75) 45%, rgba(36,16,25,0.4) 100%)",
           }}
         />
       </div>
 
       <div className="relative mx-auto max-w-content px-8">
-        <p className="mb-4 text-[13px] font-semibold uppercase tracking-[0.14em] text-accent-kicker">{copy.hero.kicker}</p>
+        <p className="mb-4 text-[13px] font-semibold uppercase tracking-[0.14em] text-hero-kicker">{copy.hero.kicker}</p>
         <h1 className="max-w-[760px] font-display text-4xl font-bold leading-[1.08] tracking-tight sm:text-5xl lg:text-[56px]">
           {copy.hero.title}
         </h1>
@@ -50,7 +50,7 @@ export default function HeroBanner({ lang }: { lang: Lang }) {
         <div className="mt-9 flex flex-wrap gap-3.5">
           <Link
             href={`/${lang}/quote`}
-            className="rounded-control bg-lime px-6 py-3.5 text-[15px] font-semibold text-hero-deep transition-opacity duration-200 hover:opacity-90"
+            className="rounded-control bg-amber px-6 py-3.5 text-[15px] font-semibold text-hero-deep transition-opacity duration-200 hover:opacity-90"
           >
             {copy.hero.ctaQuote}
           </Link>
