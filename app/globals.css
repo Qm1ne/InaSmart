@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: theme("colors.bg");
+  color: theme("colors.ink");
+}
+
+::selection {
+  background: oklch(85% 0.06 265);
+}
+
+a {
+  color: inherit;
+}
