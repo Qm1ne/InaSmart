@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import PlaceholderPhoto from "./PlaceholderPhoto";
 import { projectCategories, projects } from "@/lib/content";
 import type { Lang } from "@/lib/locale";
 
@@ -39,9 +40,7 @@ export default function ProjectsFilter({ lang }: { lang: Lang }) {
               key={project.id}
               className="overflow-hidden rounded-card-lg border border-hairline bg-white transition-all duration-200 hover:-translate-y-1 hover:shadow-lg"
             >
-              <div className="flex h-[150px] items-center justify-center bg-[repeating-linear-gradient(45deg,#F7DCE7,#F7DCE7_10px,#FBEEF3_10px,#FBEEF3_20px)] font-mono text-[11px] text-[#8A1F49]">
-                project photo
-              </div>
+              <PlaceholderPhoto label="project photo" className="h-[150px]" />
               <div className="p-5">
                 <p className="text-[11px] font-bold uppercase tracking-[0.1em] text-primary">
                   {category ? (lang === "ar" ? category.ar : category.en) : ""}

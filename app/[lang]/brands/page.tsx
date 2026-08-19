@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { brands, t } from "@/lib/content";
 import { DEFAULT_LOCALE, isValidLocale, type Lang } from "@/lib/locale";
 
-export const metadata: Metadata = { title: "Brands — INASMART" };
+export const metadata: Metadata = { title: "Brands — INA SMART" };
 
 export default function BrandsPage({ params }: { params: { lang: string } }) {
   const lang: Lang = isValidLocale(params.lang) ? params.lang : DEFAULT_LOCALE;

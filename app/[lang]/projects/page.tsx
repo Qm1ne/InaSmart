@@ -3,7 +3,12 @@ import ProjectsFilter from "@/components/ProjectsFilter";
 import { t } from "@/lib/content";
 import { DEFAULT_LOCALE, isValidLocale, type Lang } from "@/lib/locale";
 
-export const metadata: Metadata = { title: "Projects — INASMART" };
+// Hidden page: reachable by direct URL but kept out of nav, the sitemap and
+// search results until the case studies are rewritten for the B2B positioning.
+export const metadata: Metadata = {
+  title: "Projects — INA SMART",
+  robots: { index: false, follow: false },
+};
 
 export default function ProjectsPage({ params }: { params: { lang: string } }) {
   const lang: Lang = isValidLocale(params.lang) ? params.lang : DEFAULT_LOCALE;

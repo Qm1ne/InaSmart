@@ -4,7 +4,21 @@ import WhatsAppLink from "@/components/WhatsAppLink";
 import { CONTACT_ADDRESS, CONTACT_EMAIL, CONTACT_PHONE, CONTACT_WHATSAPP_DISPLAY, t } from "@/lib/content";
 import { DEFAULT_LOCALE, isValidLocale, type Lang } from "@/lib/locale";
 
-export const metadata: Metadata = { title: "Contact — INASMART" };
+export function generateMetadata({ params }: { params: { lang: string } }): Metadata {
+  const lang: Lang = isValidLocale(params.lang) ? params.lang : DEFAULT_LOCALE;
+  return {
+    title:
+      lang === "ar"
+        ? "تواصل معنا | إينا سمارت الدوحة، قطر — هاتف وواتساب وبريد"
+        : "Contact INA SMART | Technology & System Integration Company, Doha Qatar",
+    description:
+      lang === "ar"
+        ? "تواصل مع إينا سمارت في الدوحة، قطر عبر الهاتف أو واتساب أو البريد الإلكتروني — تكامل الأنظمة وتوريد التقنية المتقدمة والأتمتة والحلول الذكية."
+        : "Contact INA SMART in Doha, Qatar by phone, WhatsApp or email — system integration, advanced technology sourcing, automation and smart solutions.",
+    keywords: ["System integrator Qatar", "Technology sourcing Qatar", "ICT solutions Qatar", "AV solutions Qatar"],
+    alternates: { canonical: `/${lang}/contact` },
+  };
+}
 
 export default function ContactPage({ params }: { params: { lang: string } }) {
   const lang: Lang = isValidLocale(params.lang) ? params.lang : DEFAULT_LOCALE;
@@ -21,18 +35,24 @@ export default function ContactPage({ params }: { params: { lang: string } }) {
             <div>
               <strong>{copy.email}</strong>
               <br />
-              {CONTACT_EMAIL}
+              <span dir="ltr" style={{ unicodeBidi: "isolate", display: "inline-block" }}>
+                {CONTACT_EMAIL}
+              </span>
             </div>
             <div>
               <strong>{copy.phone}</strong>
               <br />
-              {CONTACT_PHONE}
+              <span dir="ltr" style={{ unicodeBidi: "isolate", display: "inline-block" }}>
+                {CONTACT_PHONE}
+              </span>
             </div>
             <div>
               <strong>{copy.whatsapp}</strong>
               <br />
               <WhatsAppLink className="font-semibold text-primary transition-opacity duration-200 hover:opacity-70">
-                {CONTACT_WHATSAPP_DISPLAY}
+                <span dir="ltr" style={{ unicodeBidi: "isolate", display: "inline-block" }}>
+                  {CONTACT_WHATSAPP_DISPLAY}
+                </span>
               </WhatsAppLink>
             </div>
             <div>

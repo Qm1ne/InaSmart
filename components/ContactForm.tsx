@@ -9,16 +9,18 @@ export default function ContactForm({ lang }: { lang: Lang }) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [sent, setSent] = useState(false);
 
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const subject = encodeURIComponent(`Website contact from ${name}`);
     const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
     window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
+    setSent(true);
   }
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col gap-3.5">
+    <form onSubmit={handleSubmit} className="flex flex-col gap-3.5 rounded-card-lg border border-hairline bg-white p-7.5">
       <div className="flex flex-col gap-1.5">
         <label className="text-[13px] font-semibold" htmlFor="contact-name">
           {copy.formName}
@@ -59,9 +61,9 @@ export default function ContactForm({ lang }: { lang: Lang }) {
       </div>
       <button
         type="submit"
-        className="mt-2 self-start rounded-control bg-primary px-5.5 py-3.5 text-sm font-bold text-white transition-opacity duration-200 hover:opacity-90"
+        className="mt-2 self-start rounded-control bg-[linear-gradient(135deg,#1E93E8,#1668C9)] px-5.5 py-3.5 text-sm font-bold text-white transition-opacity duration-200 hover:opacity-90"
       >
-        {copy.send}
+        {sent ? copy.sent : copy.send}
       </button>
     </form>
   );
